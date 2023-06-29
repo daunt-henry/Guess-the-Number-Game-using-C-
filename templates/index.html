@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number</title>
+    <style>
+        body {
+            background-color: #202020;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .form-submit {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Guess the Number!</h1>
+        <form action="/play" method="POST">
+            <label for="number" class="form-label">Guess the number between 1 and 100:</label>
+            <input type="number" id="number" name="guess" class="form-input" required>
+            <input type="hidden" name="number" value="{{ number }}">
+            <input type="hidden" name="nguesses" value="{{ nguesses }}">
+            <br>
+            <input type="submit" value="Submit" class="form-submit">
+        </form>
+    </div>
+</body>
+</html>
